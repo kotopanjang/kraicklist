@@ -45,7 +45,7 @@ func (s *Finder) Load() error {
 }
 
 func (s *Finder) Search(query string) ([]Record, error) {
-	var result []Record
+	result := []Record{}
 	for _, record := range s.records {
 		if strings.Contains(record.Title, query) || strings.Contains(record.Content, query) {
 			result = append(result, record)
