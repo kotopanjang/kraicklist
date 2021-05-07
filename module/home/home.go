@@ -12,5 +12,5 @@ type HomeRepo interface {
 }
 
 type HomeUsecase interface {
-	HandleSearchFromFile(ctx context.Context, whatToSearch string) (wrap wrapper.Result)
+	SearchFromFile(ctx context.Context, whatToSearch string) (wrap wrapper.Result)
 }
