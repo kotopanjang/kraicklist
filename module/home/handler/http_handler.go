@@ -41,7 +41,7 @@ func (h HomeHttpHandler) SearchString(w http.ResponseWriter, r *http.Request) {
 	q := r.URL.Query().Get("q")
 	if len(q) == 0 {
 
-		w.Write([]byte("missing search query in query params"))
+		// w.Write([]byte("missing search query in query params"))
 		// err := errors.New("missing search query in query params")
 
 		wp.IsError = true
