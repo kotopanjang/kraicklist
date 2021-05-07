@@ -19,7 +19,7 @@ func NewSearchUsecase(log *logrus.Logger, repo home.HomeRepo) home.HomeUsecase {
 	return &SearchUsecase{logger: log, repo: repo}
 }
 
-func (u SearchUsecase) HandleSearchFromFile(ctx context.Context, stringToSearch string) (wrap wrapper.Result) {
+func (u SearchUsecase) SearchFromFile(ctx context.Context, stringToSearch string) (wrap wrapper.Result) {
 	if strings.TrimSpace(stringToSearch) == "" {
 		return wrapper.Result{IsError: true, Err: errors.New(string(wrapper.StatUnexpectedError)), Data: nil}
 	}
