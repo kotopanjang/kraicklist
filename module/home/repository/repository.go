@@ -28,5 +28,8 @@ func (s SearchRepository) Search(ctx context.Context, stringToSearch string) (se
 	}
 
 	searchResult, err = s.filesearch.Search(stringToSearch)
+	if err != nil {
+		err = wrapper.ErrInternalServer
+	}
 	return
 }
