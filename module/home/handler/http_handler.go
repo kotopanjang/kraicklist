@@ -50,7 +50,7 @@ func (h HomeHttpHandler) SearchString(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	result := h.Usecase.HandleSearchFromFile(ctx, q)
+	result := h.Usecase.SearchFromFile(ctx, q)
 	wp.Data = result.Data
 	wp.IsError = false
 
