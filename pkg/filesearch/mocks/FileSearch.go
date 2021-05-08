@@ -27,7 +27,7 @@ func (_m *Filesearch) Load() error {
 }
 
 // Search provides a mock function with given fields: query
-func (_m *Filesearch) Search(query string) ([]model.Record, error) {
+func (_m *Filesearch) Search(query string) []model.Record {
 	ret := _m.Called(query)
 
 	var r0 []model.Record
@@ -39,12 +39,5 @@ func (_m *Filesearch) Search(query string) ([]model.Record, error) {
 		}
 	}
 
-	var r1 error
-	if rf, ok := ret.Get(1).(func(string) error); ok {
-		r1 = rf(query)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
+	return r0
 }
