@@ -30,8 +30,7 @@ func main() {
 	router := mux.NewRouter()
 
 	// initialize searcher
-	ss := new(filesearch.Finder)
-	ss.FilePath = pathFileSearch
+	ss := filesearch.NewFinder(pathFileSearch)
 	err := ss.Load()
 	if err != nil {
 		logger.Fatal(err)
