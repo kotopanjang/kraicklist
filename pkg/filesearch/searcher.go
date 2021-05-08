@@ -16,6 +16,10 @@ type Finder struct {
 	FilePath string
 }
 
+func NewFinder(filepath string) *Finder {
+	return &Finder{[]Record{}, filepath}
+}
+
 func (s *Finder) Load() error {
 	// open file
 	file, err := os.Open(s.FilePath)
@@ -44,12 +48,12 @@ func (s *Finder) Load() error {
 	return nil
 }
 
-func (s *Finder) Search(query string) ([]Record, error) {
+func (s *Finder) Search(query string) []Record {
 	result := []Record{}
 	for _, record := range s.records {
-		if strings.Contains(record.Title, query) || strings.Contains(record.Content, query) {
+		if strings.Contains(strings.ToLower(record.Title), strings.ToLower(query)) || strings.Contains(strings.ToLower(record.Content), strings.ToLower(query)) {
 			result = append(result, record)
 		}
 	}
-	return result, nil
+	return result
 }

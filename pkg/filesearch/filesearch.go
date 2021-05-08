@@ -7,5 +7,5 @@ import (
 // Filesearch is behaviour of Search8+50
 type Filesearch interface {
 	Load() error
-	Search(query string) ([]Record, error)
+	Search(query string) []Record
 }
