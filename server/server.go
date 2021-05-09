@@ -24,6 +24,7 @@ type HTTPServer struct {
 	Searcher   filesearch.Filesearch
 }
 
+// Start will start the server
 func (s *HTTPServer) Start() {
 	defer close(s.ExitSignal)
 
