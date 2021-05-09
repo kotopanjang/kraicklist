@@ -19,3 +19,7 @@
 .border-none {
     border: none;
 }
+
+body {
+    zoom: 90%;
+}
