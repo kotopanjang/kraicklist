@@ -40,10 +40,6 @@ func (h HomeHttpHandler) SearchString(w http.ResponseWriter, r *http.Request) {
 	//get param
 	q := r.URL.Query().Get("q")
 	if len(q) == 0 {
-
-		// w.Write([]byte("missing search query in query params"))
-		// err := errors.New("missing search query in query params")
-
 		wp.IsError = true
 		wp.Err = errors.New("missing search query in query params")
 		wrapper.ResponseError(w, &wp)
@@ -54,7 +50,7 @@ func (h HomeHttpHandler) SearchString(w http.ResponseWriter, r *http.Request) {
 	wp.Data = result.Data
 	wp.IsError = false
 
-	wrapper.ResponseSuccess(w, 200, &wp, "")
+	wrapper.ResponseSuccess(w, &wp, "")
 	return
 
 }

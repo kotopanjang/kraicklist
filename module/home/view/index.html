@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/bootstrap.min.css" />
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/site.js"></script>
     <title>KraickList - Find Your Needs Here</title>
 </head>
 
@@ -18,54 +21,9 @@
     <div>
         <ul id="resultList"></ul>
     </div>
-    <script>
-        const Controller = {
-            search: (ev) => {
-                ev.preventDefault();
-                const data = Object.fromEntries(new FormData(form));
-                if (data.query.trim() == "") {
-                    alert("Please enter text to search!")
-                    return
-                }
-                const response = fetch(`/search?q=${data.query}`).then((response) => {
-                    response.json().then((results) => {
-                        if (results.code == 200) {
-                            if (results.data.lenth == 0) {
-                                alert(`No result for ${data.query}`);
-                                return
-                            }
-                        } else {
-                            alert("ERROR! ", message);
-                            return
-                        }
-
-                        
-                        Controller.updateList(results.data);
-                    });
-                });
-            },
-
-            updateList: (results) => {
-                const rows = [];
-                for (let result of results) {
-                    rows.push(
-                        `
-                            <li>
-                                <div>
-                                    <p>${result.title}</p>
-                                    <p>${result.content}</p>
-                                </div>
-                            </li>
-                        `
-                    );
-                }
-                resultList.innerHTML = rows.join(" ");
-            },
-        };
-
-        const form = document.getElementById("form");
-        form.addEventListener("submit", Controller.search);
-    </script>
+    <!-- <script>
+        
+    </script> -->
 </body>
 
 </html>

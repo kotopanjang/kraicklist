@@ -1,6 +1,6 @@
 package model
 
-// Record is an entity
+// Record is a model
 type Record struct {
 	ID        int64    `json:"id"`
 	Title     string   `json:"title"`

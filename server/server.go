@@ -16,6 +16,7 @@ import (
 	homeUsecase "challenge.haraj.com.sa/kraicklist/module/home/usecase"
 )
 
+// HTTPServer is struct for http server
 type HTTPServer struct {
 	Port       string
 	Logger     *logrus.Logger

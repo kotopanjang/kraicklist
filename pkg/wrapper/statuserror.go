@@ -7,10 +7,10 @@ type Status string
 // StatOK describe okeeey
 var StatOK Status = "OK"
 
-// StatInvalidRequest describe invalid request
+// StatInvalidRequest describe invalid req
 var StatInvalidRequest Status = "INVALID_REQUEST"
 
-// StatUnexpectedError describe any other errors
+// StatUnexpectedError describe unexpected err
 var StatUnexpectedError Status = "UNEXPECTED_ERROR"
 
 // ErrInternalServer error
