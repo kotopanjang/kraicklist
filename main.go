@@ -19,8 +19,8 @@ func main() {
 
 	pathFileSearch := os.Getenv("PATHSEARCHFILE")
 	if pathFileSearch == "" {
-		fmt.Println("PATHSEARCHFILE is not set!")
-		return
+		fmt.Println("PATHSEARCHFILE is not set! Now using default path!")
+		pathFileSearch = "data.gz"
 	}
 
 	// set logger
