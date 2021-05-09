@@ -5,25 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/site.css" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+
     <script src="/assets/bootstrap.min.js"></script>
-    <script src="/assets/site.js"></script>
     <title>KraickList - Find Your Needs Here</title>
 </head>
 
 <body>
-    <div>
-        <form id="form" autocomplete="off">
-            <input type="text" id="query" name="query">
-            <button type="submit">Search</button>
-        </form>
+    <div class="container">
+        <div class="top-mgn-20 row">
+            <div class="col-md-1">
+                <img class="img-left" src="/assets/Search-me.png" />
+            </div>
+            <div class="col-md-11">
+                <form id="form" autocomplete="off">
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Search anything!" type="text" id="query" name="query">
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="top-mgn-20 row">
+            <div id="resultList"></div>
+        </div>
     </div>
-    <div>
-        <ul id="resultList"></ul>
-    </div>
-    <!-- <script>
-        
-    </script> -->
+    
+    <script src="/assets/site.js"></script>
 </body>
 
 </html>

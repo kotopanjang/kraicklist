@@ -1,0 +1,21 @@
+.img-left {
+    width: 50px;
+}
+
+.top-mgn-20 {
+    margin-top: 20px;
+}
+
+.title-item {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.title-item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.border-none {
+    border: none;
+}
