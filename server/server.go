@@ -49,6 +49,9 @@ func (s *HTTPServer) Start() {
 }
 
 func (s *HTTPServer) composeHandlerView() {
+	//register assets
+	s.Router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
+
 	//set handler index
 	fs := http.FileServer(http.Dir("./module/home/view"))
 	s.Router.Handle("/", fs)
