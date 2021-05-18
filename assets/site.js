@@ -7,6 +7,7 @@ const Controller = {
             return
         }
         document.getElementById("loading").style.display = "block";
+        document.getElementById("resultList").style.display = "none";
         const response = fetch(`/search?q=${data.query}`).then((response) => {
             response.json().then((results) => {
                 if (results.code == 200) {
@@ -20,6 +21,7 @@ const Controller = {
                 }
 
                 document.getElementById("loading").style.display = "none";
+                document.getElementById("resultList").style.display = "block";
                 Controller.updateList(results.data);
             });
         });
