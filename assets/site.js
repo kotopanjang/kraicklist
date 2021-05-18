@@ -3,9 +3,10 @@ const Controller = {
         ev.preventDefault();
         const data = Object.fromEntries(new FormData(form));
         if (data.query.trim() == "") {
-            alert("Please enter text to search!")
+            alert("Please enter text to search!");
             return
         }
+        document.getElementById("loading").style.display = "block";
         const response = fetch(`/search?q=${data.query}`).then((response) => {
             response.json().then((results) => {
                 if (results.code == 200) {
@@ -18,7 +19,7 @@ const Controller = {
                     return
                 }
 
-                
+                document.getElementById("loading").style.display = "none";
                 Controller.updateList(results.data);
             });
         });
@@ -26,6 +27,20 @@ const Controller = {
 
     updateList: (results) => {
         const rows = [];
+        if (results.length == 0) {
+            rows.push(
+                `
+                <div class="list-group-item list-group-item-action border-none">
+                    <div class="not-found">
+                        <div><img src="/assets/not-found.png" /></div>
+                        Sorry, the items you search is not found!
+                    </div>
+                    
+                </div>
+                `
+            );
+        }
+
         for (let result of results) {
             rows.push(
                 `
@@ -36,8 +51,6 @@ const Controller = {
                     <p class="mb-1">${result.content}</p>
                     <br />
                 </div>
-
-                    
                 `
             );
         }

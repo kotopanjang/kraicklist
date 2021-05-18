@@ -1,3 +1,15 @@
+body {
+    zoom: 90%;
+}
+
+.not-found {
+    text-align: center;
+}
+
+.not-found img {
+    width: 150px;
+}
+
 .img-left {
     width: 50px;
 }
@@ -20,6 +32,7 @@
     border: none;
 }
 
-body {
-    zoom: 90%;
+#loading {
+    display: none;
+    text-align: center;
 }
